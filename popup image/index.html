@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="main_container">
+        <img src="./avatar1.jpg" alt="main image" class="main-image">
+        <div class="hovered_images">
+            <img src="./avatar2.jpg" alt="">
+            <img src="./avatar3.jpg" alt="">
+            <img src="./avatar4.jpg" alt="">
+            <img src="./avatar5.jpg" alt="">
+        </div>
+    </div> -->
+
+    <img src="./avatar1.jpg" alt="" class="main-image">
+    <div class="modal-container">
+        <span class="close"><i class="uil uil-times"></i></span>
+        <div class="modal-image">
+            <img src="./avatar2.jpg" alt="">
+            <img src="./avatar3.jpg" alt="">
+            <img src="./avatar4.jpg" alt="">
+            <img src="./avatar5.jpg" alt="">
+        </div>
+    </div>
+
+    <img src="./avatar1.jpg" alt="" class="main-image">
+    <div class="modal-container">
+        <span class="close"><i class="uil uil-times"></i></span>
+        <div class="modal-image">
+            <img src="./avatar2.jpg" alt="">
+            <img src="./avatar3.jpg" alt="">
+            <img src="./avatar4.jpg" alt="">
+            <img src="./avatar5.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="display"></div>
+
+    <script>
+        let modalImage = document.querySelectorAll(".main-image");
+        let times = document.querySelectorAll(".close");
+        
+        // modalImage.forEach(modalImage => {
+        //     modalImage.onclick = function(){
+        //         modalImage.nextElementSibling.style.display = "flex";
+        //     }
+        // });
+
+        for (let index = 0; index < modalImage.length; index++) {
+            modalImage[index].onclick = function(){
+                modalImage[index].nextElementSibling.classList.add("active");
+            }
+        }
+
+        for (let ex = 0; ex < times.length; ex++){
+            times[ex].onclick = function(){
+                times[ex].parentElement.classList.remove("active");
+            }
+        }
+    </script>
+</body>
+</html>

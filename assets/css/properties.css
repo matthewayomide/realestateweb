@@ -1,0 +1,108 @@
+.main-image{
+    cursor: pointer;
+}
+.modal-image{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.modal-holder{
+    position: relative;
+    width: 100%;
+}
+.modal-container{
+    height: 70vh;
+    background-color:#888;
+    position:absolute;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0; 
+    transition: all 0.3s ease;
+}
+.modal-container .close{
+    display: none;
+}
+.modal-container .modal-image{
+    width:0;
+}
+.modal-container .modal-image > img{
+    width: 0;
+    transition-delay: .2s;
+}
+.active-modal{
+    width: 100%;
+    background-color:#888;
+}
+.active-modal .close{
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#FFAD00;
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    cursor: pointer;
+    display: block;
+}
+.active-modal .modal-image{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 70%;
+    transition: all 0.3s ease;
+}
+.active-modal .modal-image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin:0 1rem;
+}
+
+@media screen and (max-width:968px) {
+    body{
+        align-items: center;
+        flex-direction: column;
+    }
+    .modal-container{
+        width: 100%;
+        height: 0;
+        position:absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        transition: all 0.3s ease .2s;
+    }
+    .modal-container .close{
+        width: 0;
+        transition:all 0.1s ease .2s;
+    }
+    .modal-container .modal-image{
+        height:0;
+    }
+    .modal-container .modal-image > img{
+        transition-delay: 0;
+    }
+    .active-modal{
+        height: 70vh;
+    }
+    .active-modal .close{
+        top: .3rem;
+        right: 1.5rem;
+        font-size: 1.4rem;
+    }
+    .active-modal .modal-image{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+        width: 100%;
+        height: 100%;
+        padding:.7rem;
+    }
+    .active-modal .modal-image > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+    }
+}
